@@ -5,11 +5,11 @@ describe TicTacToe do
         @tictactoe = described_class.new
     end
 
-    it "returns 3 empty arrays with an array" do
+    it "returns 3 arrays with 3 nil values in each array within an array" do
         # Act
         result = @tictactoe.get_grid()
 
         # Assert
-        expect(result).to eq([[], [], []])
+        expect(result).to eq([[nil, nil, nil], [nil, nil, nil], [nil, nil, nil]])
     end 
-end 
+end

@@ -1,5 +1,5 @@
 class TicTacToe
     def get_grid()
-        return []
+        return [[], [], []]
     end
 end
