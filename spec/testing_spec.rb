@@ -1,6 +1,6 @@
 require "./tictactoe"
 
-describe "TicTacToe" do 
+describe TicTacToe do 
     before (:each) do
         @tictactoe = described_class.new
     end
