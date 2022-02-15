@@ -12,4 +12,12 @@ describe TicTacToe do
         # Assert
         expect(result).to eq([[nil, nil, nil], [nil, nil, nil], [nil, nil, nil]])
     end 
+
+    it "receives a string and places an 'X' in the top corner of the grid" do
+        # Act
+        result = @tictactoe.update_grid("Malcolm")
+
+        # Assert
+        expect(result).to eq([["X", nil, nil], [nil, nil, nil], [nil, nil, nil]])
+    end 
 end
