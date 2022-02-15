@@ -13,7 +13,7 @@ describe TicTacToe do
         expect(result).to eq([[nil, nil, nil], [nil, nil, nil], [nil, nil, nil]])
     end 
 
-    it "receives a string and places an 'X' in the top corner of the grid" do
+    it "starts the game by receiving the name of the player as a string and places an 'X' in the top left of the grid" do
         # Act
         result = @tictactoe.update_grid("Malcolm")
 
