@@ -5,7 +5,7 @@ class TicTacToe
 
     def update_grid(userInput)
         @grid[0][0] = "X"
-        return @grid 
+        return @grid
     end
  
     def draw_grid(userInput)
@@ -13,6 +13,9 @@ class TicTacToe
         grid_string = @grid.join("|")
         grid_string[5] = "\n"
         grid_string[11] = "\n"
+        puts grid_string
         return grid_string
     end
+
+
 end
