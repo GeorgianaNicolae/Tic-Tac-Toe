@@ -1,13 +1,18 @@
 class TicTacToe
-    @@grid = []
-
-    def get_grid()
-        @@grid = Array.new(3) { Array.new(3) }
-        return @@grid
+    def initialize
+        @grid = Array.new(3) { Array.new(3, " ") }
     end
 
-    def update_grid(nameOfPlayer)
-        @@grid[0][0] = "X"
-        return @@grid 
+    def update_grid(userInput)
+        @grid[0][0] = "X"
+        return @grid 
+    end
+ 
+    def draw_grid(userInput)
+        update_grid(userInput)
+        grid_string = @grid.join("|")
+        grid_string[5] = "\n"
+        grid_string[11] = "\n"
+        return grid_string
     end
 end
