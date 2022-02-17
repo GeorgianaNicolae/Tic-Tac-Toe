@@ -20,7 +20,7 @@ class TicTacToe
     def get_player1_name()
         print "Player 1 enter your name: "
         player1 = gets.chomp
-        puts player1
+        puts "#{player1} you are playing with symbol X"
 
         return player1
     end 

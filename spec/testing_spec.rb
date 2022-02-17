@@ -18,7 +18,7 @@ describe TicTacToe do
     end
 
 
-    it "gets player 1 to input their name" do
+    it "gets player 1 to input their name then informs them with what symbol they are playing" do
         
         result = @tictactoe.get_player1_name()
 
