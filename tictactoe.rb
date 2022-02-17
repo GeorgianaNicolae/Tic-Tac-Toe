@@ -17,5 +17,13 @@ class TicTacToe
         return grid_string
     end
 
+    def get_player1_name()
+        print "Player 1 enter your name: "
+        player1 = gets.chomp
+        puts player1
+
+        return player1
+    end 
+
 
 end
