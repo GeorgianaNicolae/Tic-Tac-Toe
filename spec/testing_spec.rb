@@ -10,15 +10,17 @@ describe TicTacToe do
 
     it "starts the game by receiving the name of the player as a string and places an 'X' in the top left of the grid" do
         
-        result = @tictactoe.update_grid("Malcome")
+        grid = @tictactoe.create_grid
+        result = @tictactoe.update_grid("Malcome", grid)
         
         expect(result).to eq([["X", " ", " "], [" "," "," "], [" "," "," "]])
     
     end
 
     it "prints a grid to the terminal" do
-        
-        result = @tictactoe.draw_grid("Malcome")
+
+        grid = @tictactoe.create_grid
+        result = @tictactoe.draw_grid("Malcome", grid)
 
         expect(result).to eq([["X", " ", " "], [" ", " ", " "], [" ", " ", " "]])
 
@@ -41,8 +43,8 @@ describe TicTacToe do
     end
 
     it "gets player 1 to play their first move by stating the row and the column" do
-        
-        result = @tictactoe.player1_first_move("Betty")
+        grid = @tictactoe.create_grid
+        result = @tictactoe.player1_first_move("Betty", grid)
 
         expect(result).to eq([[" ", " ", "X"], [" "," "," "], [" "," "," "]])
     

@@ -1,29 +1,27 @@
 class TicTacToe
-    def initialize
-        @grid = Array.new(3) { Array.new(3, " ") }
-    end
-
-    # def create_grid()
-
-    #     grid = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
-    #     return grid
-        
+    # def initialize
+    #     @grid = Array.new(3) { Array.new(3, " ") }
     # end
 
-    def update_grid(userInput)
-        @grid[0][0] = "X"
-        return @grid
+    def create_grid
+        grid = Array.new(3) { Array.new(3, " ") }
+        return grid     
+    end
+
+    def update_grid(userInput, grid)
+        grid[0][0] = "X"
+        return grid
     end
  
-    def draw_grid(userInput)
-        update_grid(userInput)
+    def draw_grid(userInput, grid)
+        update_grid(userInput, grid)
         puts "\n"
-        puts " #{@grid[0][0]} | #{@grid[0][1]} | #{@grid[0][2]}"
+        puts " #{grid[0][0]} | #{grid[0][1]} | #{grid[0][2]}"
         puts "-----------"
-        puts " #{@grid[1][0]} | #{@grid[1][1]} | #{@grid[1][2]}"
+        puts " #{grid[1][0]} | #{grid[1][1]} | #{grid[1][2]}"
         puts "-----------"
-        puts " #{@grid[2][0]} | #{@grid[2][1]} | #{@grid[2][2]}"
-        return @grid
+        puts " #{grid[2][0]} | #{grid[2][1]} | #{grid[2][2]}"
+        return grid
     end
 
     def get_player1_name()
@@ -40,13 +38,12 @@ class TicTacToe
         return player2
     end 
 
-    def player1_first_move(player1)
+    def player1_first_move(player1, grid)
         print "#{player1} Enter the row for your move: "
         row = gets.chomp.to_i
 
         print "Enter the column for your move : "
         column = gets.chomp.to_i
-        grid = @grid
         grid[row-1][column-1] = "X"
         puts grid
         return grid
