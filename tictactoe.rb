@@ -25,5 +25,13 @@ class TicTacToe
         return player1
     end 
 
+    def get_player2_name()
+        print "Player 2 enter your name: "
+        player2 = gets.chomp
+        puts "#{player2} you are playing with symbol O"
+
+        return player2
+    end 
+
 
 end
