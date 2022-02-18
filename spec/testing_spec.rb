@@ -38,6 +38,6 @@ describe TicTacToe do
         
         result = @tictactoe.player1_first_move("Betty")
 
-        expect(result).to eq([["", " ", "X"], [" "," "," "], [" "," "," "]])
+        expect(result).to eq([[" ", " ", "X"], [" "," "," "], [" "," "," "]])
     end
 end

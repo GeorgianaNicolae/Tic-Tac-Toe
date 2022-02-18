@@ -33,7 +33,17 @@ class TicTacToe
         return player2
     end 
 
-    
+    def player1_first_move(player1)
+        print "#{player1} Enter the row for your move: "
+        row = gets.chomp.to_i
+
+        print "Enter the column for your move : "
+        column = gets.chomp.to_i
+        grid = @grid
+        grid[row-1][column-1] = "X"
+        puts grid
+        return grid
+    end
 
 
 end
