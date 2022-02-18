@@ -33,4 +33,11 @@ describe TicTacToe do
 
         expect(result).to eq("Rachael")
     end
+
+    it "gets player 1 to play their first move by stating the row and the column" do
+        
+        result = @tictactoe.player1_first_move("Betty")
+
+        expect(result).to eq([["", " ", "X"], [" "," "," "], [" "," "," "]])
+    end
 end
