@@ -25,4 +25,12 @@ describe TicTacToe do
 
         expect(result).to eq("Betty")
     end
+
+    it "gets player 2 to input their name then informs them with what symbol they are playing" do
+        
+        result = @tictactoe.get_player2_name()
+
+
+        expect(result).to eq("Rachael")
+    end
 end

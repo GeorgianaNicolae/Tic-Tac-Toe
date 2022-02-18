@@ -13,7 +13,7 @@ class TicTacToe
         grid_string = @grid.join("|")
         grid_string[5] = "\n"
         grid_string[11] = "\n"
-        puts grid_string
+        puts "\n\n" + grid_string + "\n\n"
         return grid_string
     end
 
