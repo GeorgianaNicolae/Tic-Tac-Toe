@@ -3,6 +3,13 @@ class TicTacToe
         @grid = Array.new(3) { Array.new(3, " ") }
     end
 
+    # def create_grid()
+
+    #     grid = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+    #     return grid
+        
+    # end
+
     def update_grid(userInput)
         @grid[0][0] = "X"
         return @grid
@@ -10,18 +17,19 @@ class TicTacToe
  
     def draw_grid(userInput)
         update_grid(userInput)
-        grid_string = @grid.join("|")
-        grid_string[5] = "\n"
-        grid_string[11] = "\n"
-        puts "\n\n" + grid_string + "\n\n"
-        return grid_string
+        puts "\n"
+        puts " #{@grid[0][0]} | #{@grid[0][1]} | #{@grid[0][2]}"
+        puts "-----------"
+        puts " #{@grid[1][0]} | #{@grid[1][1]} | #{@grid[1][2]}"
+        puts "-----------"
+        puts " #{@grid[2][0]} | #{@grid[2][1]} | #{@grid[2][2]}"
+        return @grid
     end
 
     def get_player1_name()
         print "Player 1 enter your name: "
         player1 = gets.chomp
         puts "#{player1} you are playing with symbol X"
-
         return player1
     end 
 
@@ -29,7 +37,6 @@ class TicTacToe
         print "Player 2 enter your name: "
         player2 = gets.chomp
         puts "#{player2} you are playing with symbol O"
-
         return player2
     end 
 
@@ -45,5 +52,20 @@ class TicTacToe
         return grid
     end
 
+    # def play_whole_game()
 
+    #     grid = @tictactoe.create_grid()
+        
+    #     [row, column] = player_move(player)
+
+    #     grid = update_grid(player, grid, row, column)
+
+    #     draw_grid(grid)
+
+    #     check_if_winner()
+
+    #     player2_move
+
+        
+    # end
 end
