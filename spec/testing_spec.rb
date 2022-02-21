@@ -17,15 +17,6 @@ describe TicTacToe do
     
     end
 
-    it "prints a grid to the terminal" do
-
-        grid = @tictactoe.create_grid
-        result = @tictactoe.draw_grid("Malcome", grid)
-
-        expect(result).to eq([["X", " ", " "], [" ", " ", " "], [" ", " ", " "]])
-
-    end
-
     it "gets player 1 to input their name then informs them with what symbol they are playing" do
       
         result = @tictactoe.get_player1_name()

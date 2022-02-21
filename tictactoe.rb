@@ -12,17 +12,6 @@ class TicTacToe
         grid[0][0] = "X"
         return grid
     end
- 
-    def draw_grid(userInput, grid)
-        update_grid(userInput, grid)
-        puts "\n"
-        puts " #{grid[0][0]} | #{grid[0][1]} | #{grid[0][2]}"
-        puts "-----------"
-        puts " #{grid[1][0]} | #{grid[1][1]} | #{grid[1][2]}"
-        puts "-----------"
-        puts " #{grid[2][0]} | #{grid[2][1]} | #{grid[2][2]}"
-        return grid
-    end
 
     def get_player1_name()
         print "Player 1 enter your name: "
