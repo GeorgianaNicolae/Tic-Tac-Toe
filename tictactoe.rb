@@ -51,6 +51,11 @@ class TicTacToe
         return result
     end
 
+    # def check_rows
+    #     @grid.each { |row| row.equal? }
+
+    # end
+
     
 end
 
