@@ -49,10 +49,9 @@ describe TicTacToe do
     end
 
     it "checks if grid is full" do
-        
-     @grid = [["X", "O", "X"], ["X", "O", "X"], ["X", "O", "X"]]
-    result = @tictactoe.grid_full?
-    expect(result).to eq(true)
+        @tictactoe.grid = [["X", "O", "X"], ["X", "O", "X"], ["X", "O", "X"]]
+        result = @tictactoe.grid_full?
+        expect(result).to eq(true)
     end
 end
 

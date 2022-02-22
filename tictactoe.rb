@@ -1,4 +1,6 @@
 class TicTacToe
+    attr_accessor :grid
+    
     def initialize
         @grid = Array.new(3) { Array.new(3, " ") }
         @player1 = ""
@@ -35,6 +37,18 @@ class TicTacToe
         puts "Player 2 - enter your name"
         @player2 = gets.chomp
         return "#{@player1}, you are '#{@player1symbol}' and #{@player2}, you are '#{@player2symbol}'"
+    end
+
+    def grid_full?
+        result = true
+        @grid.each do |array|
+            array.each do |item|
+                if item == " "
+                    result = false
+                end
+            end
+        end
+        return result
     end
 end
 
