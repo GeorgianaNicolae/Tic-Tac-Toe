@@ -1,57 +1,54 @@
 class TicTacToe
-    # def initialize
-    #     @grid = Array.new(3) { Array.new(3, " ") }
-    # end
-
-    def create_grid
-        grid = Array.new(3) { Array.new(3, " ") }
-        return grid     
+    def initialize
+        @grid = Array.new(3) { Array.new(3, " ") }
+        @player1 = ""
+        @player2 = ""
+        @player1symbol = "X"
+        @player2symbol = "O"
+        @turn = 1
     end
 
-    def update_grid(userInput, grid)
-        grid[0][0] = "X"
-        return grid
+    def player1turn?
+        @turn % 2 != 0
     end
 
-    def get_player1_name()
-        print "Player 1 enter your name: "
-        player1 = gets.chomp
-        puts "#{player1} you are playing with symbol X"
-        return player1
-    end 
-
-    def get_player2_name()
-        print "Player 2 enter your name: "
-        player2 = gets.chomp
-        puts "#{player2} you are playing with symbol O"
-        return player2
-    end 
-
-    def player1_first_move(player1, grid)
-        print "#{player1} Enter the row for your move: "
-        row = gets.chomp.to_i
-
-        print "Enter the column for your move : "
-        column = gets.chomp.to_i
-        grid[row-1][column-1] = "X"
-        puts grid
-        return grid
+    def square_already_taken?(row, column)
+        @grid[row-1][column-1] != " "
     end
 
-    # def play_whole_game()
+    def update_grid(row, column)
+        # return "no" if @grid[row-1][column-1] != " "
+        return "no" if square_already_taken?(row, column)
+        # create error message to return instead of no, store as variable in initialize or in above method?
+        if player1turn?
+          @grid[row-1][column-1] = "X"
+        else
+          @grid[row-1][column-1] = "O"
+        end
 
-    #     grid = @tictactoe.create_grid()
-        
-    #     [row, column] = player_move(player)
+        @turn += 1
+        return @grid
+    end
 
-    #     grid = update_grid(player, grid, row, column)
-
-    #     draw_grid(grid)
-
-    #     check_if_winner()
-
-    #     player2_move
-
-        
-    # end
+    def get_players
+        puts "Player 1 - enter your name"
+        @player1 = gets.chomp
+        puts "Player 2 - enter your name"
+        @player2 = gets.chomp
+        return "#{@player1}, you are '#{@player1symbol}' and #{@player2}, you are '#{@player2symbol}'"
+    end
 end
+
+#     def player1_first_move(player1, grid)
+#         print "#{player1} Enter the row for your move: "
+#         row = gets.chomp.to_i
+
+#         print "Enter the column for your move : "
+#         column = gets.chomp.to_i
+#         grid = @grid
+#         grid[row-1][column-1] = "X"
+#         puts grid
+#         return grid
+
+#         # update_grid(row, column, grid)
+#     end
