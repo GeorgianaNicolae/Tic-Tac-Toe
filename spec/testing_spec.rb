@@ -55,9 +55,11 @@ describe TicTacToe do
     end
 
    it "checks if all elements in a row are equal" do
-        result = @tictactoe.all_equal?
+        row = ["X", "X", "X"]
+        result = @tictactoe.all_equal?(row)
         expect(result).to eq(true)
     end
+
     # it "checks for a winner by the rows" do
     # @tictactoe.grid = [["X", "X", "X"], ["X", "O", "X"], ["X", "O", "X"]]
 

@@ -51,6 +51,11 @@ class TicTacToe
         return result
     end
 
+    def all_equal?(row)
+        return if row.first == nil
+        row.each_cons(2).all? { |x,y| x == y }
+      end
+
     # def check_rows
     #     @grid.each { |row| row.equal? }
 
