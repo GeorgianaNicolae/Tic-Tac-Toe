@@ -17,7 +17,6 @@ class TicTacToe
     end
 
     def update_grid(row, column)
-        # return "no" if @grid[row-1][column-1] != " "
         return "no" if square_already_taken?(row, column)
         # create error message to return instead of no, store as variable in initialize or in above method?
         if player1turn?

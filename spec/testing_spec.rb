@@ -13,8 +13,7 @@ describe TicTacToe do
     it "updates the grid with an X on the first call and an O on the second call" do
         result = @tictactoe.update_grid(1, 1)
         expect(result).to eq([["X", " ", " "], [" "," "," "], [" "," "," "]])
-
-        result2 = @tictactoe.update_grid(2, 1,)
+        result2 = @tictactoe.update_grid(2, 1)
         expect(result2).to eq([["X", " ", " "], ["O"," "," "], [" "," "," "]])
     end
 
@@ -47,6 +46,13 @@ describe TicTacToe do
         @tictactoe.update_grid(1, 1)
         result = @tictactoe.square_already_taken?(1, 1)
         expect(result).to eq(true)
+    end
+
+    it "checks if grid is full" do
+        
+     @grid = [["X", "O", "X"], ["X", "O", "X"], ["X", "O", "X"]]
+    result = @tictactoe.grid_full?
+    expect(result).to eq(true)
     end
 end
 
