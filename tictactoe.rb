@@ -1,6 +1,6 @@
 class TicTacToe
     attr_accessor :grid
-    
+
     def initialize
         @grid = Array.new(3) { Array.new(3, " ") }
         @player1 = ""
@@ -19,14 +19,14 @@ class TicTacToe
     end
 
     def update_grid(row, column)
-        return "no" if square_already_taken?(row, column)
-        # create error message to return instead of no, store as variable in initialize or in above method?
+        return "Choose another square" if square_already_taken?(row, column)
+        # instead of returning string we need to ask user to play again and get new input
         if player1turn?
           @grid[row-1][column-1] = "X"
         else
           @grid[row-1][column-1] = "O"
         end
-
+        
         @turn += 1
         return @grid
     end
@@ -50,6 +50,8 @@ class TicTacToe
         end
         return result
     end
+
+    
 end
 
 #     def player1_first_move(player1, grid)

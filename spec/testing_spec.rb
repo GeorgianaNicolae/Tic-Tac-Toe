@@ -39,7 +39,7 @@ describe TicTacToe do
     it "returns no instead of updating grid if the selected space is already taken" do
         @tictactoe.update_grid(1, 1)
         result = @tictactoe.update_grid(1, 1)
-        expect(result).to eq("no")
+        expect(result).to eq("Choose another square")
     end
 
     it "returns true if the grid square is not an empty string" do
@@ -52,6 +52,13 @@ describe TicTacToe do
         @tictactoe.grid = [["X", "O", "X"], ["X", "O", "X"], ["X", "O", "X"]]
         result = @tictactoe.grid_full?
         expect(result).to eq(true)
+    end
+
+    it "checks for a winner by the rows" do
+    @tictactoe.grid = [["X", "X", "X"], ["X", "O", "X"], ["X", "O", "X"]]
+
+    result = @tictactoe.check_rows
+    except(result).to eq(true)
     end
 end
 
