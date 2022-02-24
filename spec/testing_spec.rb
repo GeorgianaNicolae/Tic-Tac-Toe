@@ -88,10 +88,10 @@ describe TicTacToe do
     end
 
     it "returns O if all items in the second columnn are equal" do
-        @tictactoe.grid = [["X", "O", "X"],["X", "O", "O"], ["O", "O", "X"]]
+        @tictactoe.grid = [["X", "O", "X"],["X", "O", "O"], ["X", "O", "X"]]
 
         result = @tictactoe.check_columns
-        expect(result).to eq("O")
+        expect(result).to eq("X")
     end
 
     

@@ -40,19 +40,11 @@ class TicTacToe
     end
 
     def grid_full?
-        result = true
-        @grid.each do |array|
-            array.each do |item|
-                if item == " "
-                    result = false
-                end
-            end
-        end
-        return result
+        !@grid.include?(" ")
     end
 
     def all_equal?(row)
-        # return if row.first == " "
+        # return false if row.first == " "
         row.each_cons(2).all? { |x,y| x == y }
     end
 
@@ -64,6 +56,7 @@ class TicTacToe
     def check_columns
         @grid.transpose.each { |row| return row.first if all_equal?(row) }
     end
+
 end
 
 #     def player1_first_move(player1, grid)
