@@ -54,10 +54,16 @@ describe TicTacToe do
         expect(result).to eq(true)
     end
 
-   it "checks if all elements in a row are equal" do
+   it "returns true when all elements in a row are equal" do
         row = ["X", "X", "X"]
         result = @tictactoe.all_equal?(row)
         expect(result).to eq(true)
+    end
+
+    it "returns false when elements in a row aren't equal" do
+        row = ["X", "X", " "]
+        result = @tictactoe.all_equal?(row)
+        expect(result).to eq(false)
     end
 
     # it "checks for a winner by the rows" do
