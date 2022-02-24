@@ -61,7 +61,9 @@ class TicTacToe
 
     end
 
-    
+    def check_columns
+        @grid.transpose.each { |row| return row.first if all_equal?(row) }
+    end
 end
 
 #     def player1_first_move(player1, grid)
