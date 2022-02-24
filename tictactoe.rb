@@ -56,10 +56,10 @@ class TicTacToe
         row.each_cons(2).all? { |x,y| x == y }
     end
 
-    # def check_rows
-    #     @grid.each { |row| row.equal? }
+    def check_rows
+        @grid.each { |row| return row.first if all_equal?(row) }
 
-    # end
+    end
 
     
 end

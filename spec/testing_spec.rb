@@ -66,12 +66,19 @@ describe TicTacToe do
         expect(result).to eq(false)
     end
 
-    # it "checks for a winner by the rows" do
-    # @tictactoe.grid = [["X", "X", "X"], ["X", "O", "X"], ["X", "O", "X"]]
+    it "returns X if all items in the first array are the same" do
+        @tictactoe.grid = [["X", "X", "X"], ["X", "O", "X"], ["X", "O", "X"]]
 
-    # result = @tictactoe.check_rows
-    # except(result).to eq(true)
-    # end
+        result = @tictactoe.check_rows
+        expect(result).to eq("X")
+    end
+
+    it "returns O if all items in the second array are the same" do
+        @tictactoe.grid = [["X", "O", "X"],["O", "O", "O"], ["X", "O", "X"]]
+
+        result = @tictactoe.check_rows
+        expect(result).to eq("O")
+    end
 end
 
 #     it "gets player 1 to play their first move by stating the row and the column" do
