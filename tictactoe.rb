@@ -68,13 +68,13 @@ class TicTacToe
         return false
     end
 
-    def check_winner    
-        if check_rows_equal == "X" || check_columns_equal == "X" || check_diagonals_equal == "X"
+    def check_winner   
+        winning_line = check_rows_equal || check_columns_equal || check_diagonals_equal
+        if winning_line == "X"
             return "Player1 wins"
-        elsif check_rows_equal == "O" || check_columns_equal == "O" || check_diagonals_equal == "O"
-            return "Player2 wins"
+        else winning_line == "O"
+            "Player2 wins"
         end
-        
     end
 end
 
