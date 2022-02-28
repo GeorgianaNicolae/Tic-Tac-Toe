@@ -66,7 +66,16 @@ class TicTacToe
         
         diagonals.each { |row| return row.first if all_equal?(row) }
         return false
-      end
+    end
+
+    def check_winner    
+        if check_rows_equal == "X" || check_columns_equal == "X" || check_diagonals_equal == "X"
+            return "Player1 wins"
+        elsif check_rows_equal == "O" || check_columns_equal == "O" || check_diagonals_equal == "O"
+            return "Player2 wins"
+        end
+        
+    end
 end
 
 #     def player1_first_move(player1, grid)
