@@ -114,6 +114,27 @@ describe TicTacToe do
         result = @tictactoe.check_diagonals_equal
         expect(result).to eq("X")
     end
+
+    it "returns O if all items on the diagonal starting from the top right are equal" do
+        @tictactoe.grid = [["X", "O", "O"],["X", "O", "O"], ["O", "X", "X"]]
+
+        result = @tictactoe.check_diagonals_equal
+        expect(result).to eq("O")
+    end
+
+    it "returns false if not all items in the diagonal are equal" do
+        @tictactoe.grid = [["X", "O", "X"], ["X", "O", "O"], ["O", "X", "X"]]
+
+        result = @tictactoe.check_diagonals_equal
+        expect(result).to eq(false)
+    end
+
+    it "returns 'Player1 wins' if any of the winner cases are met" do
+        @tictactoe.grid = [["X", "X", "X"], ["X", "O", " "], ["O", "X", "X"]]
+
+        result = @tictactoe.check_winner
+        expect(result).to eq("Player1 wins")
+    end
 end
 
 #     it "gets player 1 to play their first move by stating the row and the column" do
