@@ -72,9 +72,10 @@ class TicTacToe
         winning_line = check_rows_equal || check_columns_equal || check_diagonals_equal
         if winning_line == "X"
             return "Player1 wins"
-        else winning_line == "O"
-            "Player2 wins"
+        elsif winning_line == "O"
+            return "Player2 wins"
         end
+        return false
     end
 end
 

@@ -135,6 +135,22 @@ describe TicTacToe do
         result = @tictactoe.check_winner
         expect(result).to eq("Player1 wins")
     end
+
+    it "returns 'Player2 wins' if any of the winner cases are met" do
+        @tictactoe.grid = [["X", "O", "O"],["X", "O", "O"], ["O", "X", "X"]]
+
+        result = @tictactoe.check_winner
+        expect(result).to eq("Player2 wins")
+    end
+
+    it "returns false if no winner cases are met" do
+        @tictactoe.grid = [["X", "O", "X"], [
+                            "X", "O", "O"], 
+                            ["O", "X", "X"]]
+
+        result = @tictactoe.check_winner
+        expect(result).to eq(false)
+    end
 end
 
 #     it "gets player 1 to play their first move by stating the row and the column" do
