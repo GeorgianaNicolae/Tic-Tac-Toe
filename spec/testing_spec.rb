@@ -107,6 +107,13 @@ describe TicTacToe do
         result = @tictactoe.check_columns_equal
         expect(result).to eq(false)
     end
+
+    it "returns X if all items on the diagonal starting from the top left are equal" do
+        @tictactoe.grid = [["X", "O", "X"],["X", "X", "O"], ["O", "X", "X"]]
+
+        result = @tictactoe.check_diagonals_equal
+        expect(result).to eq("X")
+    end
 end
 
 #     it "gets player 1 to play their first move by stating the row and the column" do

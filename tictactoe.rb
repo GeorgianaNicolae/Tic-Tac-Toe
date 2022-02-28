@@ -57,6 +57,16 @@ class TicTacToe
          @grid.transpose.each { |row| return row.first if all_equal?(row)}
          return false 
      end
+
+     def check_diagonals_equal
+        diagonals = [
+          [@grid[0][0], @grid[1][1], @grid[2][2]],
+          [@grid[0][2], @grid[1][1], @grid[2][0]]
+        ]
+        
+        diagonals.each { |row| return row.first if all_equal?(row) }
+        return false
+      end
 end
 
 #     def player1_first_move(player1, grid)
