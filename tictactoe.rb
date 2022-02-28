@@ -31,13 +31,13 @@ class TicTacToe
         return @grid
     end
 
-    def get_players
-        puts "Player 1 - enter your name"
-        @player1 = gets.chomp
-        puts "Player 2 - enter your name"
-        @player2 = gets.chomp
-        return "#{@player1}, you are '#{@player1symbol}' and #{@player2}, you are '#{@player2symbol}'"
-    end
+    # def get_players
+    #     puts "Player 1 - enter your name"
+    #     @player1 = gets.chomp
+    #     puts "Player 2 - enter your name"
+    #     @player2 = gets.chomp
+    #     return "#{@player1}, you are '#{@player1symbol}' and #{@player2}, you are '#{@player2symbol}'"
+    # end
 
     def grid_full?
         !@grid.include?(" ")
@@ -48,15 +48,15 @@ class TicTacToe
         row.each_cons(2).all? { |x,y| x == y }
     end
 
-    def check_rows
+    def check_rows_equal
         @grid.each { |row| return row.first if all_equal?(row) }
-
-    end
-
-    def check_columns
-        @grid.transpose.each { |row| return row.first if all_equal?(row) }
-    end
-
+         return false
+     end
+ 
+     def check_columns_equal
+         @grid.transpose.each { |row| return row.first if all_equal?(row)}
+         return false 
+     end
 end
 
 #     def player1_first_move(player1, grid)

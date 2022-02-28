@@ -69,32 +69,44 @@ describe TicTacToe do
     it "returns X if all items in the first array are the same" do
         @tictactoe.grid = [["X", "X", "X"], ["X", "O", "X"], ["X", "O", "X"]]
 
-        result = @tictactoe.check_rows
+        result = @tictactoe.check_rows_equal
         expect(result).to eq("X")
     end
 
     it "returns O if all items in the second array are the same" do
         @tictactoe.grid = [["X", "O", "X"],["O", "O", "O"], ["X", "O", "X"]]
 
-        result = @tictactoe.check_rows
+        result = @tictactoe.check_rows_equal
         expect(result).to eq("O")
     end
 
     it "returns X if all items in the first columnn are equal" do
         @tictactoe.grid = [["X", "O", "X"],["X", "O", "O"], ["X", "O", "X"]]
 
-        result = @tictactoe.check_columns
+        result = @tictactoe.check_columns_equal
         expect(result).to eq("X")
     end
 
     it "returns O if all items in the second columnn are equal" do
         @tictactoe.grid = [["X", "O", "X"],["X", "O", "O"], ["X", "O", "X"]]
 
-        result = @tictactoe.check_columns
+        result = @tictactoe.check_columns_equal
         expect(result).to eq("X")
     end
 
-    
+    it "returns false if not all items in an row are equal" do
+        @tictactoe.grid = [["X", "X", "O"], ["X", "O", "X"], ["X", "O", "X"]]
+
+        result = @tictactoe.check_rows_equal
+        expect(result).to eq(false)
+    end
+
+    it "returns false if not all items in an column are equal" do
+        @tictactoe.grid = [["X", "O", "X"],["X", "O", "O"], ["O", "X", "X"]]
+
+        result = @tictactoe.check_columns_equal
+        expect(result).to eq(false)
+    end
 end
 
 #     it "gets player 1 to play their first move by stating the row and the column" do
