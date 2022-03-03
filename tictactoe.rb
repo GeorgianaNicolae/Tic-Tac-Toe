@@ -14,20 +14,19 @@ class TicTacToe
         @turn % 2 != 0
     end
 
+    def update_turn
+        @turn += 1
+    end
+
     def square_already_taken?(row, column)
         @grid[row-1][column-1] != " "
     end
 
+    # update turn to be removed when ATDD it's implemented
     def update_grid(row, column)
         return "Choose another square" if square_already_taken?(row, column)
-        # instead of returning string we need to ask user to play again and get new input
-        if player1turn?
-          @grid[row-1][column-1] = "X"
-        else
-          @grid[row-1][column-1] = "O"
-        end
-        
-        @turn += 1
+        @grid[row-1][column-1] = player1turn? ? "X" : "O"
+        update_turn
         return @grid
     end
 
