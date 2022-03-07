@@ -10,6 +10,32 @@ class TicTacToe
         @turn = 1
     end
 
+    def play_game
+
+        # player 1 enter name
+        # player 2 enter name 
+        # get informed about their symbol
+
+        # display grid
+
+        # player 1 enter row 
+        # player 1 enter column
+
+        # update grid 
+        # display grid
+        # player 2 enter row 
+        # player 2 enter column
+
+        # square already taken?
+        # update grid
+        # display grid
+
+
+        # when to check grid full, square already taken and winner
+
+
+    end 
+
     def player1turn?
         @turn % 2 != 0
     end
@@ -84,18 +110,21 @@ class TicTacToe
         end
         return false
     end
+
+    def player_move
+        print "Enter the row for your move: "
+        row = gets.chomp.to_i
+
+        print "Enter the column for your move : "
+        column = gets.chomp.to_i
+        
+        return row, column
+    end
+
+    # def output_metho
+    #     puts 'output'
+    # end
 end
 
-#     def player1_first_move(player1, grid)
-#         print "#{player1} Enter the row for your move: "
-#         row = gets.chomp.to_i
 
-#         print "Enter the column for your move : "
-#         column = gets.chomp.to_i
-#         grid = @grid
-#         grid[row-1][column-1] = "X"
-#         puts grid
-#         return grid
 
-#         # update_grid(row, column, grid)
-#     end
