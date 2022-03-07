@@ -22,10 +22,18 @@ class TicTacToe
         @grid[row-1][column-1] != " "
     end
 
+    def which_symbol
+        player1turn? ? "X" : "O"
+    end
+
+    # take out the top return statement and have the controller 
+    # check if square is already taken 
+    # if so then go back to user, if not then update_grid
+
     # update turn to be removed when ATDD it's implemented
     def update_grid(row, column)
         return "Choose another square" if square_already_taken?(row, column)
-        @grid[row-1][column-1] = player1turn? ? "X" : "O"
+        @grid[row-1][column-1] = which_symbol
         update_turn
         return @grid
     end
