@@ -10,11 +10,10 @@ describe TicTacToe do
         expect(result).to eq([["X", " ", " "], [" "," "," "], [" "," "," "]])
     end
 
-    it "updates the grid with an X on the first call and an O on the second call" do
-        result = @tictactoe.update_grid(1, 1)
-        expect(result).to eq([["X", " ", " "], [" "," "," "], [" "," "," "]])
-        result2 = @tictactoe.update_grid(2, 1)
-        expect(result2).to eq([["X", " ", " "], ["O"," "," "], [" "," "," "]])
+    it "updates the grid with an O on the second call" do
+        turn1 = @tictactoe.update_grid(1, 1)
+        result = @tictactoe.update_grid(2, 1)
+        expect(result).to eq([["X", " ", " "], ["O"," "," "], [" "," "," "]])
     end
 
     it "returns true if it is player1's turn (turn is an odd number)" do
