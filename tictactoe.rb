@@ -11,6 +11,12 @@ class TicTacToe
     end
 
     def play_game
+        #the below is how you get values from a function 
+        # row_and_column = player_move()
+
+        # row = get_row
+        # column = get_column
+    
 
         # player 1 enter name
         # player 2 enter name 
@@ -64,6 +70,16 @@ class TicTacToe
         return @grid
     end
 
+    def get_row
+        print "Enter the row for your move: "
+        row = gets.chomp.to_i
+    end
+
+    def get_column
+        print "Enter the column for your move : "
+        column = gets.chomp.to_i
+    end
+
     # def get_players
     #     puts "Player 1 - enter your name"
     #     @player1 = gets.chomp
@@ -111,15 +127,7 @@ class TicTacToe
         return false
     end
 
-    def player_move
-        print "Enter the row for your move: "
-        row = gets.chomp.to_i
-
-        print "Enter the column for your move : "
-        column = gets.chomp.to_i
-        
-        return row, column
-    end
+    
 
     # def output_metho
     #     puts 'output'

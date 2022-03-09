@@ -15,7 +15,7 @@ describe TicTacToe do
         result = @tictactoe.update_grid(2, 1)
         expect(result).to eq([["X", " ", " "], ["O"," "," "], [" "," "," "]])
     end
-    
+
     it "returns true if it is player1's turn (turn is an odd number)" do
         result = @tictactoe.player1turn?
         expect(result).to eq(true)
@@ -150,6 +150,18 @@ describe TicTacToe do
         result = @tictactoe.check_winner
         expect(result).to eq(false)
     end
+
+    it "asks the user to input a row number and returns it" do
+        allow(@tictactoe).to receive(:gets).and_return("1")
+        result = @tictactoe.get_row
+        expect(result).to eq(1)
+    end 
+
+    it "asks the user to input a column number and returns it" do
+        allow(@tictactoe).to receive(:gets).and_return("1")
+        result = @tictactoe.get_column
+        expect(result).to eq(1)
+    end 
 end
 
 #     it "gets player 1 to play their first move by stating the row and the column" do
