@@ -1,12 +1,11 @@
 class TicTacToe
     attr_accessor :grid
+    attr_accessor :turn
 
     def initialize
         @grid = Array.new(3) { Array.new(3, " ") }
         @player1 = ""
         @player2 = ""
-        @player1symbol = "X"
-        @player2symbol = "O"
         @turn = 1
     end
 
@@ -36,10 +35,7 @@ class TicTacToe
         # update grid
         # display grid
 
-
         # when to check grid full, square already taken and winner
-
-
     end 
 
     def player1turn?
@@ -80,20 +76,11 @@ class TicTacToe
         column = gets.chomp.to_i
     end
 
-    # def get_players
-    #     puts "Player 1 - enter your name"
-    #     @player1 = gets.chomp
-    #     puts "Player 2 - enter your name"
-    #     @player2 = gets.chomp
-    #     return "#{@player1}, you are '#{@player1symbol}' and #{@player2}, you are '#{@player2symbol}'"
-    # end
-
     def grid_full?
         !@grid.include?(" ")
     end
 
     def all_equal?(row)
-        # return false if row.first == " "
         row.each_cons(2).all? { |x,y| x == y }
     end
 
@@ -126,13 +113,16 @@ class TicTacToe
         end
         return false
     end
-
-    
-
-    # def output_metho
-    #     puts 'output'
-    # end
 end
 
+# def output_method
+#     puts 'output'
+# end
 
-
+# def get_players
+#     puts "Player 1 - enter your name"
+#     @player1 = gets.chomp
+#     puts "Player 2 - enter your name"
+#     @player2 = gets.chomp
+#     return "#{@player1}, you are '#{@player1symbol}' and #{@player2}, you are '#{@player2symbol}'"
+# end

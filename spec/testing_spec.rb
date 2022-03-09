@@ -163,10 +163,3 @@ describe TicTacToe do
         expect(result).to eq(1)
     end 
 end
-
-#     it "gets player 1 to play their first move by stating the row and the column" do
-#         grid = @tictactoe.create_grid
-#         result = @tictactoe.player1_first_move("Betty", grid)
-
-#         expect(result).to eq([[" ", " ", "X"], [" "," "," "], [" "," "," "]])
-#     end 
