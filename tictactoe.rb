@@ -60,7 +60,7 @@ class TicTacToe
 
     # update turn to be removed when ATDD it's implemented
     def update_grid(row, column)
-        return "Choose another square" if square_already_taken?(row, column)
+        print "Choose another square" if square_already_taken?(row, column)
         @grid[row-1][column-1] = which_symbol
         update_turn
         return @grid

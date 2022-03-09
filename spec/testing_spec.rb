@@ -37,8 +37,7 @@ describe TicTacToe do
 
     it "returns no instead of updating grid if the selected space is already taken" do
         @tictactoe.update_grid(1, 1)
-        result = @tictactoe.update_grid(1, 1)
-        expect(result).to eq("Choose another square")
+        expect{@tictactoe.update_grid(1, 1)}.to output("Choose another square") .to_stdout
     end
 
     it "returns true if the grid square is not an empty string" do
