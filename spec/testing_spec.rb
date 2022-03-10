@@ -161,4 +161,10 @@ describe TicTacToe do
         result = @tictactoe.get_column
         expect(result).to eq(1)
     end 
+
+    it "asks player1 to input their name" do 
+        allow(@tictactoe).to receive(:gets).and_return("Rachel")
+        result = @tictactoe.get_player1_name
+        expect(result).to eq("Rachel")
+    end 
 end

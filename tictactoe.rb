@@ -54,6 +54,11 @@ class TicTacToe
         player1turn? ? "X" : "O"
     end
 
+    def get_player1_name    
+        print "Player 1 - enter your name"
+        @player1 = gets.chomp
+    end
+
     # take out the top return statement and have the controller 
     # check if square is already taken 
     # if so then go back to user, if not then update_grid
@@ -114,15 +119,3 @@ class TicTacToe
         return false
     end
 end
-
-# def output_method
-#     puts 'output'
-# end
-
-# def get_players
-#     puts "Player 1 - enter your name"
-#     @player1 = gets.chomp
-#     puts "Player 2 - enter your name"
-#     @player2 = gets.chomp
-#     return "#{@player1}, you are '#{@player1symbol}' and #{@player2}, you are '#{@player2symbol}'"
-# end
