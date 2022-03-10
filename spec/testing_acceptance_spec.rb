@@ -43,7 +43,7 @@ describe TicTacToe do
         expect{@tictactoe.update_grid(row, column)}.to output("Choose another square") .to_stdout
     end
 
-  it "Saves players names" do
+  it "Saves players names and gives symbols using their names" do
     allow(@tictactoe).to receive(:gets).and_return("Rachel", "Betty")
     player1 = @tictactoe.get_player1_name
     player2 = @tictactoe.get_player2_name 

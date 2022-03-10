@@ -175,11 +175,8 @@ describe TicTacToe do
     end 
 
     it "informs the players of their symbols" do 
-        allow(@tictactoe).to receive(:gets).and_return("Rachel", "Betty")
-        player1 = @tictactoe.get_player1_name
-        player2 = @tictactoe.get_player2_name
-        
-        result = @tictactoe.give_players_symbols
-        expect{@tictactoe.give_players_symbols()}.to output("#{player1}, you are X and #{player2}, you are O") .to_stdout
+       @tictactoe.player1 = "Betty"
+       @tictactoe.player2 = "Rachel"
+       expect{@tictactoe.give_players_symbols}.to output("#{@tictactoe.player1}, you are X and #{@tictactoe.player2}, you are O") .to_stdout
     end 
 end

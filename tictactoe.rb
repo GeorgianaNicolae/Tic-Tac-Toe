@@ -1,6 +1,8 @@
 class TicTacToe
     attr_accessor :grid
     attr_accessor :turn
+    attr_accessor :player1
+    attr_accessor :player2
 
     def initialize
         @grid = Array.new(3) { Array.new(3, " ") }
