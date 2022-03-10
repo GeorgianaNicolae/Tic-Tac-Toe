@@ -59,6 +59,24 @@ class TicTacToe
         @player1 = gets.chomp
     end
 
+    def get_player2_name    
+        print "Player 2 - enter your name"
+        @player2 = gets.chomp
+    end
+
+    
+    # return "#{@player1}, you are '#{@player1symbol}' and #{@player2}, you are '#{@player2symbol}'"
+    
+    def get_row
+        print "Enter the row for your move: "
+        row = gets.chomp.to_i
+    end
+
+    def get_column
+        print "Enter the column for your move : "
+        column = gets.chomp.to_i
+    end
+
     # take out the top return statement and have the controller 
     # check if square is already taken 
     # if so then go back to user, if not then update_grid
@@ -69,16 +87,6 @@ class TicTacToe
         @grid[row-1][column-1] = which_symbol
         update_turn
         return @grid
-    end
-
-    def get_row
-        print "Enter the row for your move: "
-        row = gets.chomp.to_i
-    end
-
-    def get_column
-        print "Enter the column for your move : "
-        column = gets.chomp.to_i
     end
 
     def grid_full?

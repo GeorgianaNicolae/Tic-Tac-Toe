@@ -167,4 +167,10 @@ describe TicTacToe do
         result = @tictactoe.get_player1_name
         expect(result).to eq("Rachel")
     end 
+
+    it "asks player2 to input their name" do 
+        allow(@tictactoe).to receive(:gets).and_return("Betty")
+        result = @tictactoe.get_player2_name
+        expect(result).to eq("Betty")
+    end 
 end
