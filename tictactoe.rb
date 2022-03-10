@@ -64,6 +64,12 @@ class TicTacToe
         @player2 = gets.chomp
     end
 
+    def give_players_symbols 
+
+        print "#{@player1}, you are X and #{@player2}, you are O"
+
+    end
+
     
     # return "#{@player1}, you are '#{@player1symbol}' and #{@player2}, you are '#{@player2symbol}'"
     
