@@ -63,6 +63,16 @@ describe TicTacToe do
         expected_output = a_string_including("\n   |   |  \n-----------\n   |   |  \n-----------\n   |   |  \n")
         expect{@tictactoe.play_game}.to output(expected_output) .to_stdout
       end 
+
+      it "puts an X in the top right corner" do
+        row = "1"
+        column = "3"
+
+        allow(@tictactoe).to receive(:gets).and_return(row, column)
+        expected_output = a_string_including("\n   |   | X \n-----------\n   |   |  \n-----------\n   |   |  \n")
+        expect{@tictactoe.play_game}.to output(expected_output) .to_stdout
+
+      end
     end    
   end
 end
