@@ -4,13 +4,7 @@ describe TicTacToe do
     before (:each) do
         @tictactoe = described_class.new
     end
-    
-    xit "Plays the game" do
-      result = @tictactoe.play_game()
-  
-      expect(result).to eq("Winner")
-    end
-
+   
     context "updates grid" do
       it "puts an X in the top left corner" do
         allow(@tictactoe).to receive(:gets).and_return("1", "1")
@@ -36,11 +30,10 @@ describe TicTacToe do
 
     it "prompts the player to choose another square if already taken" do
       grid = @tictactoe.grid = [["X", "O", "X"], ["X", "O", "X"], ["X", "O", "X"]]
-
       allow(@tictactoe).to receive(:gets).and_return("1", "1")
-        row = @tictactoe.get_row
-        column = @tictactoe.get_column
-        expect{@tictactoe.update_grid(row, column)}.to output("Choose another square") .to_stdout
+      row = @tictactoe.get_row
+      column = @tictactoe.get_column
+      expect{@tictactoe.update_grid(row, column)}.to output("Choose another square") .to_stdout
     end
 
   it "Saves players names and gives symbols using their names" do
@@ -50,7 +43,21 @@ describe TicTacToe do
     expect{@tictactoe.give_players_symbols()}.to output("#{player1}, you are X and #{player2}, you are O") .to_stdout
   end 
 
-end
+ 
+   
+  context "Plays the game" do
+      it "Gets player 1 name" do
 
-# this is to demo the comment on line 118 
-# expect{output_method()}. to_output('output') .to_stdout
+        allow(@tictactoe).to receive(:gets).and_return("Max")
+        @tictactoe.play_game
+        expect(@tictactoe.player1).to eq("Max")
+      end
+
+      it "Gets player 2 name" do
+
+        allow(@tictactoe).to receive(:gets).and_return("Lulu")
+        @tictactoe.play_game
+        expect(@tictactoe.player2).to eq("Lulu")
+      end 
+  end
+end

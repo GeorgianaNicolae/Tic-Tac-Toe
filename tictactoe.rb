@@ -15,13 +15,17 @@ class TicTacToe
         #the below is how you get values from a function 
         # row_and_column = player_move()
 
-        # row = get_row
-        # column = get_column
-    
+        get_player1_name
+        get_player2_name 
+        # give_players_symbols 
+        
 
         # player 1 enter name
         # player 2 enter name 
         # get informed about their symbol
+
+        # row = get_row
+        # column = get_column
 
         # display grid
 
@@ -139,22 +143,3 @@ class TicTacToe
         puts " #{@grid[2][0]} | #{@grid[2][1]} | #{@grid[2][2]}"    
     end
 end
-
-# def draw_grid
-#     @grid =  %{
-#      #{@grid[0][0]} | #{@grid[0][1]} | #{@grid[0][2]} 
-#      -----------
-#       #{@grid[1][0]} | #{@grid[1][1]} | #{@grid[1][2]} 
-#      -----------
-#       #{@grid[2][0]} | #{@grid[2][1]} | #{@grid[2][2]} 
-#      }
-#  end
-
-# 
-# @grid =  %{
-#  #{@grid_items[0]} | #{@grid_items[1]} | #{@grid_items[2]}
-# --- --- ---
-#  #{@grid_items[3]} | #{@grid_items[4]} | #{@grid_items[5]}
-# --- --- ---
-#  #{@grid_items[6]} | #{@grid_items[7]} | #{@grid_items[8]}
-# }
