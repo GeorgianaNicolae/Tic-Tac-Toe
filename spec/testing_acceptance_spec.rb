@@ -43,9 +43,8 @@ describe TicTacToe do
     expect{@tictactoe.give_players_symbols()}.to output("#{player1}, you are X and #{player2}, you are O") .to_stdout
   end 
 
- 
-   
   context "Plays the game" do
+    context "Gets and saves players names and gives symbols using their names"
       it "Gets player 1 name" do
 
         allow(@tictactoe).to receive(:gets).and_return("Max")
@@ -58,6 +57,15 @@ describe TicTacToe do
         allow(@tictactoe).to receive(:gets).and_return("Lulu")
         @tictactoe.play_game
         expect(@tictactoe.player2).to eq("Lulu")
+      end 
+
+      it "Prints in the terminal info about symbols using players names" do
+          player1 = "Rachel"
+          player2 = "Betty"
+          allow(@tictactoe).to receive(:gets).and_return(player1, player2)
+          expected_output = a_string_including("#{player1}, you are X and #{player2}, you are O")
+
+          expect{@tictactoe.play_game()}.to output(expected_output) .to_stdout
       end 
   end
 end
