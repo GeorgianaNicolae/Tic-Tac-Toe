@@ -6,13 +6,13 @@ describe TicTacToe do
     end
 
     it "updates the grid with an X using row and column arguments" do
-        result = @tictactoe.update_grid(1, 1)
+        result = @tictactoe.update_grid(0, 0)
         expect(result).to eq([["X", " ", " "], [" "," "," "], [" "," "," "]])
     end
 
     it "updates the grid with an O on the second call" do
-        turn1 = @tictactoe.update_grid(1, 1)
-        result = @tictactoe.update_grid(2, 1)
+        turn1 = @tictactoe.update_grid(0, 0)
+        result = @tictactoe.update_grid(1, 0)
         expect(result).to eq([["X", " ", " "], ["O"," "," "], [" "," "," "]])
     end
 
@@ -22,27 +22,27 @@ describe TicTacToe do
     end
 
     it "returns false if it is not player1's turn (turn is an even number)" do
-        turn1 = @tictactoe.update_grid(1, 1)
+        turn1 = @tictactoe.update_grid(0, 0)
         result = @tictactoe.player1turn?
         expect(result).to eq(false)
     end
 
     it "updates grid with an O if turn is an even number and X if turn is an odd number" do
-        turn1 = @tictactoe.update_grid(1, 1)
-        turn2 = @tictactoe.update_grid(1, 2)
-        turn3 = @tictactoe.update_grid(1, 3)
-        result = @tictactoe.update_grid(3, 1)
+        turn1 = @tictactoe.update_grid(0, 0)
+        turn2 = @tictactoe.update_grid(0, 1)
+        turn3 = @tictactoe.update_grid(0, 2)
+        result = @tictactoe.update_grid(2, 0)
         expect(result).to eq([["X", "O", "X"], [" "," "," "], ["O"," "," "]])
     end
 
     it "returns no instead of updating grid if the selected space is already taken" do
-        @tictactoe.update_grid(1, 1)
-        expect{@tictactoe.update_grid(1, 1)}.to output("Choose another square") .to_stdout
+        @tictactoe.update_grid(0, 0)
+        expect{@tictactoe.update_grid(0, 0)}.to output("Choose another square") .to_stdout
     end
 
     it "returns true if the grid square is not an empty string" do
-        @tictactoe.update_grid(1, 1)
-        result = @tictactoe.square_already_taken?(1, 1)
+        @tictactoe.update_grid(0, 0)
+        result = @tictactoe.square_already_taken?(0, 0)
         expect(result).to eq(true)
     end
 
@@ -153,13 +153,13 @@ describe TicTacToe do
     it "asks the user to input a row number and returns it" do
         allow(@tictactoe).to receive(:gets).and_return("1")
         result = @tictactoe.get_row
-        expect(result).to eq(1)
+        expect(result).to eq(0)
     end 
 
     it "asks the user to input a column number and returns it" do
         allow(@tictactoe).to receive(:gets).and_return("1")
         result = @tictactoe.get_column
-        expect(result).to eq(1)
+        expect(result).to eq(0)
     end 
 
     it "asks player1 to input their name" do 

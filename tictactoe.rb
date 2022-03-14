@@ -12,17 +12,10 @@ class TicTacToe
     end
 
     def play_game
-        #the below is how you get values from a function 
-        # row_and_column = player_move()
 
         get_player1_name
         get_player2_name 
-        # give_players_symbols 
-        
-
-        # player 1 enter name
-        # player 2 enter name 
-        # get informed about their symbol
+        give_players_symbols 
 
         # row = get_row
         # column = get_column
@@ -53,7 +46,7 @@ class TicTacToe
     end
 
     def square_already_taken?(row, column)
-        @grid[row-1][column-1] != " "
+        @grid[row][column] != " "
     end
 
     def which_symbol
@@ -61,12 +54,12 @@ class TicTacToe
     end
 
     def get_player1_name    
-        print "Player 1 - enter your name"
+        print "Player 1 - enter your name : "
         @player1 = gets.chomp
     end
 
     def get_player2_name    
-        print "Player 2 - enter your name"
+        print "Player 2 - enter your name : "
         @player2 = gets.chomp
     end
 
@@ -76,12 +69,12 @@ class TicTacToe
     
     def get_row
         print "Enter the row for your move: "
-        row = gets.chomp.to_i
+        row = gets.chomp.to_i - 1
     end
 
     def get_column
         print "Enter the column for your move : "
-        column = gets.chomp.to_i
+        column = gets.chomp.to_i - 1
     end
 
     # take out the top return statement and have the controller 
@@ -91,7 +84,7 @@ class TicTacToe
     # update turn to be removed when ATDD it's implemented
     def update_grid(row, column)
         print "Choose another square" if square_already_taken?(row, column)
-        @grid[row-1][column-1] = which_symbol
+        @grid[row][column] = which_symbol
         update_turn
         return @grid
     end
@@ -143,3 +136,5 @@ class TicTacToe
         puts " #{@grid[2][0]} | #{@grid[2][1]} | #{@grid[2][2]}"    
     end
 end
+
+# TicTacToe.new.play_game
