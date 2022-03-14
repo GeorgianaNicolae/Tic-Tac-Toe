@@ -67,13 +67,8 @@ class TicTacToe
     end
 
     def give_players_symbols 
-
         print "#{@player1}, you are X and #{@player2}, you are O"
-
     end
-
-    
-    # return "#{@player1}, you are '#{@player1symbol}' and #{@player2}, you are '#{@player2symbol}'"
     
     def get_row
         print "Enter the row for your move: "
@@ -134,4 +129,32 @@ class TicTacToe
         end
         return false
     end
+
+    def draw_grid        
+        puts "\n"
+        puts " #{@grid[0][0]} | #{@grid[0][1]} | #{@grid[0][2]}"
+        puts "-----------"
+        puts " #{@grid[1][0]} | #{@grid[1][1]} | #{@grid[1][2]}"
+        puts "-----------"
+        puts " #{@grid[2][0]} | #{@grid[2][1]} | #{@grid[2][2]}"    
+    end
 end
+
+# def draw_grid
+#     @grid =  %{
+#      #{@grid[0][0]} | #{@grid[0][1]} | #{@grid[0][2]} 
+#      -----------
+#       #{@grid[1][0]} | #{@grid[1][1]} | #{@grid[1][2]} 
+#      -----------
+#       #{@grid[2][0]} | #{@grid[2][1]} | #{@grid[2][2]} 
+#      }
+#  end
+
+# 
+# @grid =  %{
+#  #{@grid_items[0]} | #{@grid_items[1]} | #{@grid_items[2]}
+# --- --- ---
+#  #{@grid_items[3]} | #{@grid_items[4]} | #{@grid_items[5]}
+# --- --- ---
+#  #{@grid_items[6]} | #{@grid_items[7]} | #{@grid_items[8]}
+# }

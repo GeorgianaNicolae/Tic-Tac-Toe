@@ -175,8 +175,12 @@ describe TicTacToe do
     end 
 
     it "informs the players of their symbols" do 
-       @tictactoe.player1 = "Betty"
-       @tictactoe.player2 = "Rachel"
-       expect{@tictactoe.give_players_symbols}.to output("#{@tictactoe.player1}, you are X and #{@tictactoe.player2}, you are O") .to_stdout
+        @tictactoe.player1 = "Betty"
+        @tictactoe.player2 = "Rachel"
+        expect{@tictactoe.give_players_symbols}.to output("#{@tictactoe.player1}, you are X and #{@tictactoe.player2}, you are O") .to_stdout
     end 
+
+    it "prints a grid to the terminal" do
+        expect{@tictactoe.draw_grid}.to output("\n   |   |  \n-----------\n   |   |  \n-----------\n   |   |  \n") .to_stdout
+    end
 end
