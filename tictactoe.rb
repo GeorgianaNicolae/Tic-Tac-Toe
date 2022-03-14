@@ -17,16 +17,16 @@ class TicTacToe
         get_player2_name 
         give_players_symbols 
 
+        draw_grid
+        #display empty grid 
         # row = get_row
         # column = get_column
 
+        #update grid 
+
         # display grid
 
-        # player 1 enter row 
-        # player 1 enter column
-
-        # update grid 
-        # display grid
+      
         # player 2 enter row 
         # player 2 enter column
 
@@ -137,4 +137,4 @@ class TicTacToe
     end
 end
 
-# TicTacToe.new.play_game
+ #TicTacToe.new.play_game
